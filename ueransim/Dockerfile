@@ -63,9 +63,9 @@ RUN git clone https://github.com/aligungr/UERANSIM && \
     make -j`nproc`
 
 # Build final image
-# FROM ubuntu:focal
+FROM ubuntu:focal
 
-# ENV DEBIAN_FRONTEND=noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -79,8 +79,8 @@ RUN apt-get update && \
         iputils-ping && \
     apt-get autoremove -y && apt-get autoclean
 
-# COPY --from=builder /UERANSIM/build /UERANSIM/build
-# COPY --from=builder /UERANSIM/config /UERANSIM/config
+COPY --from=builder /UERANSIM/build /UERANSIM/build
+COPY --from=builder /UERANSIM/config /UERANSIM/config
 
 # Set the working directory to UERANSIM
 WORKDIR UERANSIM/build
