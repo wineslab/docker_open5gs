@@ -14,7 +14,7 @@ global:
       no_ipv4v6_local_addr_in_packet_filter: true
 
 smf:
-    freeDiameter: /open5gs/install/etc/freeDiameter/smf.conf
+    # freeDiameter: /open5gs/install/etc/freeDiameter/smf.conf
     sbi:
       server:
         - address: SMF_IP
@@ -39,15 +39,10 @@ smf:
     session:
       - subnet: UE_IPV4_INTERNET_TUN_IP
         dnn: oai
-        dev: ogstun
-      - subnet: UE_IPV4_IMS_TUN_IP
-        dnn: oai2
-        dev: ogstun2
+        # dev: ogstun
     dns:
       - SMF_DNS1
       - SMF_DNS2
-      - 2001:4860:4860::8888
-      - 2001:4860:4860::8844
     p-cscf:
       - PCSCF_IP
     mtu: 1450
@@ -56,11 +51,7 @@ smf:
           - sst: 1
             dnn:
               - oai
-          - sst: 1
-            sd: 000002
-            dnn:
-              - oai2
-    metrics:
-      server:
-        - address: SMF_IP
-          port: 9091
+    # metrics:
+    #   server:
+    #     - address: SMF_IP
+    #       port: 9091
