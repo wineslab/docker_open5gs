@@ -39,6 +39,7 @@ smf:
     session:
       - subnet: UE_IPV4_INTERNET_TUN_IP2
         dnn: oai2
+        dev: ogstun
     dns:
       - SMF_DNS1
       - SMF_DNS2

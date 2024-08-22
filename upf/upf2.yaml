@@ -18,7 +18,7 @@ upf:
           advertise: UPF_ADVERTISE_IP2
     session:
       - subnet: UE_IPV4_INTERNET_TUN_IP2
-        dev: ogstun2
+        dev: ogstun
         dnn: oai2
     metrics:
       server:
